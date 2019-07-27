@@ -1,0 +1,72 @@
+{{extend './_layouts/home.html'}}
+{{block 'title'}}京东旗下二手交易平台{{/block}}
+{{block 'head'}}
+<link rel="stylesheet" href="../public/css/release.css">
+{{/block}}
+{{block 'body'}}
+<div class="breadcrumd">
+<span class="breadcrumd-item">
+    <a href="/">首页</a>
+    <i class="glyphicon glyphicon-menu-right"></i>
+</span>
+<span class="breadcrumd-item">
+    <span class="breadcrumd-inner">发布页</span>
+</span>
+</div>
+<div class="content">
+    <form class="el-form" enctype="multipart/form-data"> 
+        <div class="form-group">
+          <label for="exampleInputEmail1">商品标题</label>
+          <input type="text" class="form-control"  placeholder="给你的好物品取个好名字~" name="name">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">描述下你的商品吧</label>
+          <textarea class="form-control" rows="6" placeholder="详细的描述下商品的新旧程度，使用感受，入手渠道，出售原因吧~" name="deatail"></textarea>
+          
+        </div>
+        <div class="form-group">
+          <label for="exampleInputFile">上传商品图片</label>
+          <p class="help-block">多角度拍摄商品细节，全面显示商品，图片大小不能超过2M哦~</p>
+          <ul class="upload">
+              <li class="change" style="width:132px;height:132px;"><input type="file" name="p_url"></li>
+          </ul>
+        </div>
+     
+        
+          <div class="form-group">
+            <label for="exampleInputEmail1">发布地址</label>
+            <input type="text" class="form-control"  placeholder="写出你的详细地址~">
+          </div>
+          <div class="form-group form-inline">
+                <label for="exampleInputEmail1">想卖多少钱</label><br>
+              售卖价：<input type="text" class=".col-lg-lg" name="price"> 邮费：<input type="text">原价：<input type="text">
+              <br>商品分类：<input type="text" name="category">
+          </div>
+       
+        <div class="form-group">
+            
+            <input type="submit"  class="btn btn-danger" value="(submit)发布">
+          </div>
+      </form>
+</div>
+{{/block}}
+
+{{block 'script'}}
+<script>
+$(".el-form").on("submit",function(e){
+  console.log("q111")
+  e.preventDefault()
+
+  console.log(formData)
+  $.ajax({
+    url:'/release',
+    type:'post',
+    data:formData,
+    dataType:'json',
+    success:function(data){
+      console.log(data)
+    }
+  })
+})
+</script>
+{{/block}}

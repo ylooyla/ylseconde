@@ -1,0 +1,93 @@
+.wrapper{
+    background:#e9e9e9;
+}
+.wrapper .content{
+    width:1190px;
+    height:892px;
+    border:1px solid #e1e2e5;
+    margin:100px auto;
+    background:#f6f6f6;
+}
+.content .content-left{
+    float:left;
+    width:150px;
+    height:805px;
+    background: #f6f5f5;
+    border-right:1px solid #e2e3e5;
+}
+.content-left .title{
+    display:block;
+    font-size:16px;
+    cursor: default;
+    text-align:center;
+    line-height:50px;
+    color:#999;
+    border-bottom:1px solid #e1e2e5;
+}
+.content-left .content-ul li{
+    height:50px;
+    line-height:50px;
+    text-align: center;
+    font-size:16px;
+    color:#333;
+}
+.content-ul li:nth-child(2){
+    background:deepskyblue;
+}
+.content-ul li:hover{
+    background:pink;
+}
+.content .content-right{
+    width:980px;
+    height:100%;
+    float:left;
+}
+.content-right .title{
+    border:1px solid #e2e3e5;
+}
+.content-right .title span{
+    margin-left:20px;
+    line-height: 50px;
+} 
+.content-right .title .con{
+    display: inline-block;
+    width:2px;
+    height:12px;
+    background:deepskyblue;
+}
+.content-right .title .text{
+    font-size:16px;
+    color:deepskyblue;
+}
+.content-right .user-setting{
+    background:#fff;
+    width:100%;
+    height:500px;
+    padding:10px 60px;
+}
+.user-setting .labe {
+    line-height:50px;
+    margin-top:20px;
+}
+.user-setting .labe .red{
+    width:300px;
+    height:25px;
+    margin-left:20px;
+}
+.user-setting .labe textarea{
+    vertical-align: top;
+    width:500px;
+    margin-left:20px;
+}
+.user-setting .checkbox .radio{
+    margin-top:17px;
+    margin-left:23px;
+}
+.user-setting .save{
+    width:100px;
+    height:30px;
+    background:deepskyblue;
+    margin-top:30px;
+    margin-left:40px;
+    outline: none;
+}

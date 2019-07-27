@@ -1,0 +1,51 @@
+{{extend './_layouts/home.html'}}
+{{block 'head'}}<link rel="stylesheet" href="../public/css/login.css">{{/block}}
+{{block 'body'}}
+<div class="login-box">
+    <div class="content">
+       <div class="m-login">
+           <h3 class="ml-tit">账号登录</h3>
+           <div class="ml-con">
+               <form id="login">
+                   <input type="hidden" name="id" value="">
+                   <div><input type="text" name="nickname"
+                       placeholder="nickname"></div>
+                   <div><input type="password" name="password"
+                       placeholder="Password"></div>
+                   <div><input type="submit" value="登录"></div>
+                   <a href="">忘记密码</a>
+               </form>
+           </div>
+       </div> 
+    </div>
+</div>
+{{/block}}
+{{block 'script'}}
+<script>
+$("#login").on("submit",function(e){
+    e.preventDefault()
+    let formData = $(this).serialize()
+    console.log(formData)
+    $.ajax({
+        url:'/login',
+        data:formData,
+        dataType:'json',
+        type:'post',
+        success:function(data){
+            var err_code = data.err_code
+            if(err_code==0){
+                alert('登录成功')
+                window.location.href="/"
+            }
+            else if(err_code==1){
+                alert('邮箱或用户不存在')
+            }
+            else{
+                alert('服务繁忙，请重新登录')
+            }
+        }
+    })
+})
+</script>
+{{/block}}
+

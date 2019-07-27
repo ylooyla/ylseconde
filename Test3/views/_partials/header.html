@@ -1,0 +1,13 @@
+<div class="header">
+    <div class="header-nav">
+        <a href="/"><img src="../public/imags/拍拍.png" alt=""></a>
+        <span>
+            {{if user}}
+            <span class="nickname"><a href="/person"><img src="{{user.avatar}}" alt=""></a><a href="">{{user.nickname}}</a><a href="/loginout">退出</a></span>
+            {{else}}
+            <a href="/login">登录</a>
+            <a href="/register">注册</a>
+            {{/if}}
+        </span>
+    </div>
+</div>

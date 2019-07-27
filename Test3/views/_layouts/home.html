@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>{{block 'title'}}京东旗下二手交易平台{{/block}}</title>
+  <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="../public/css/main.css">
+  {{block 'head'}}{{/block}}
+</head>
+
+<body>
+ <div class="wrapper">
+  {{include '../_partials/header.html'}}
+  {{block 'body'}}{{/block}}
+  {{include '../_partials/footer.html'}}
+ </div>
+  <script src="../public/js/jquery-1.12.4.js"></script>
+  <script src="/node_modules/bootstrap/dist/js/bootstrap.js"></script>
+  {{block 'script'}}{{/block}}
+</body>
+
+</html>

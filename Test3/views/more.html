@@ -1,0 +1,65 @@
+{{extend './_layouts/home.html'}}
+{{block 'head'}}
+<link rel="stylesheet" href="../public/css/more.css">
+{{/block}}
+{{block 'body'}}
+<div class="content">
+    <div class="content-category">
+        <span class="category-title"></span>
+        <ul class="category-list">
+            <li title="手机" class="isCur">手机</li>
+            <li title="奢侈品">奢侈品</li>
+            <li title="电脑">电脑</li>
+            <li title="乐器">乐器</li>
+            <li title="">台式机</li>
+            <li title="钟表">钟表</li>
+            <li title="数码影音">数码影音</li>
+            <li title="生活电器">生活电器</li>
+            <li title="">路由器</li>
+            <li title="">网络盒子</li>
+            <li title="">智能手表</li>
+            <li title="">游戏手柄</li>
+            <li title="无人机">无人机</li>
+            <li title="">MP3/MP4</li>
+            <li title="">音响/音箱</li>
+            <li title="">麦克风</li>
+            <li title="">笔记本</li>
+            <li title="">一体机</li>
+        </ul>
+        <span class="category-toggle">展开</span>
+    </div>
+    <div class="content-goods">
+        <ul class="goods">
+            {{if goods.length==0}}
+            <img src="../public/imags/null.png" alt="" width="1190px">
+            {{/if}}
+            {{each goods}}
+            <li class="good-panel">
+                <div class="good-img">
+                    <a href="/detail?id={{$value._id}}"><img src="{{$value.p_url}}" alt=""></a>
+                </div>
+                <div class="good-text">
+                    <p>{{$value.name}}</p>
+                    <p>{{$value.detail}}</p>
+                </div>
+                <div class="good-price">
+                    <span class="price-red"><i>￥</i>{{$value.price}}</span>
+                </div>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</div>
+{{/block}}
+{{block 'script'}}
+<script>
+    $(function () {
+        $('.category-list').children('li').click(function(){
+            $(this).addClass("isCur")
+            $(this).siblings().removeClass("isCur")
+            let data = $(this).text()
+            window.location.assign('/more?data='+data)
+        })
+    })
+</script>
+{{/block}}

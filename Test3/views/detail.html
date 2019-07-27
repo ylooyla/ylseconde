@@ -1,0 +1,168 @@
+{{extend './_layouts/home.html'}}
+{{block 'head'}}
+<link rel="stylesheet" href="../public/css/detail.css">
+{{/block}}
+{{block 'body'}}
+<div class="breadcrumd">
+        <span class="breadcrumd-item">
+            <a href="/">首页</a>
+            <i class="glyphicon glyphicon-menu-right"></i>
+        </span>
+        <span class="breadcrumd-item">
+            <a href="#"><span class="breadcrumd-inner">{{data.category}}</span></a>
+            <i class="glyphicon glyphicon-menu-right"></i>
+        </span>
+        <span class="breadcrumd-item">
+            <a href="#" class="bread">{{data.name}}</a>
+        </span>
+        </div>
+        <div class="content">
+            <div class="clearfix">
+                <div class="good-detail">
+                    <div class="img-preview">
+                        <div class="magnifier">
+                            <div class="img-box normal">
+                                <img src="{{data.p_url}}">
+                                <div class="cover"></div>
+                            </div>
+                            <div class="big" style="background:url({{data.p_url}}) no-repeat;background-size:354.6%;"></div>
+                        </div>   
+                    </div>
+                    <div class="good-descripe">
+                        <div class="good-title">
+                            <img src="data:image/png;base64,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" alt="">
+                            
+      {{data.detail}}
+    
+                        </div>
+                    </div>
+                    <div class="good-price">
+                        <div class="sale-price">
+                            <div class="text">售卖价</div>
+                            <div class="price">
+                                <span>￥</span>{{data.price}}
+                            </div>
+                        </div>
+                        <div class="product-price">
+                            <div class="text">原 价</div>
+                            <div class="price">
+                                <span>￥</span>
+                                {{data.price}}
+                            </div>
+                        </div>
+                        <div class="sale-address">
+                            <div class="text">发布地</div>
+                            <div class="price">浙江 宁波</div>
+                        </div>
+                        <div class="lable">
+                            <span>商品全新</span>
+                            <span>无发票</span>
+
+                        </div>
+                    </div>
+                    <div class="business-message">
+                        <img src="data:image/png;base64,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" alt="">
+                        <div class="message-detail">
+                            <img src="https://storage.360buyimg.com/i.imageUpload/73616d6c693033303531353132383232323639313631_big.jpg" alt="">
+                            <div class="detail">
+                                <div class="message">
+                                    <span class="name">xxyn123</span>
+                                    <span class="state">已实名</span>
+                                    <span class="state1">信用极好</span>
+                                </div>
+                                <div class="last-time">
+                                    5个小时前来过
+                                </div>
+                            </div>
+                           
+                        </div>
+                        <div class="contact">
+                            <div class="contact-seller">
+                                <span>立即购买</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="collect">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAgCAYAAAB6kdqOAAAAAXNSR0IArs4c6QAABLlJREFUWAm9l3+IVFUUx/fN7Gy7GwYro0WBaJgxLM7Ozm5qmfZHkmUWpkKKkYboH0qGRtAPoYyw+sOCCokFE/2rP0LCkrJNgnVVNnf2ly26/SG6fyQLtiIqq7Pzo8/39e5w5+00O+62c+HMPfecc8/5vnPPu++MU1FgZLNZp7u7e2kmk1nmOM7TmMyHqqCr0Hnoe+RH4vH4X/BjRldX14P4WI1iFRSBwlASOof8RCAQ+LWxsbENH1lkecPJW7Ho7e19NJVKtbBxqV9nrz1nP4RCoZ3RaPSidH19fQ+Pjo5+DvuCHsq29/Psb6usrNza0NAwYOvyNiUSiS0ov8TZPbbROPxtnH8iG/a9zVQ9jn1Ozb47LHY0NTW1GGEOUGdn5/MYHMVpwFPeZm4JBoPHq6urO8haJXQf+iXQWugZ9EHjyDen8fUL9B10kiO6TjZSyWRyUTqdXo7tVsgFjj6Drxebm5uPyYcLiMxEEHawniYhowMHr8ZisT//XY79pcZi1Nh+9j1uawlwBgDbqJEeW27zPT0983i4w8gWevIb7FtIps672cDpbhQGzABZebYYGDlRQIp6MewbOEuKxEtWDIz2yrdiwJr6meZhqHD6+/sfGBkZGUQZwmmWzEQptD+0sdRBth6TLUDOlrpHdpTJfGL2AkYnNVpTUzPL4bjeQ/CR56iVs1RtlG0Qv5X4yxQQcLt1ZHETnbM/aPhyzYD4xooVD4BujhGg1KVX1mHHFJYAgtkWgksWXxaW4r5sAgmLMpS7yMLhsC6qso66ujrdd+4QFtWQvk/uGBoammH4cs2+mFcFSK+8O0hZ1PDlmn0xB1VDp63gT1l8udhcTGERoN+syOs5x//6Pllm/w/rxVpvvAlLgNu1FcEVCTF4iFv3JWMw1TOxVimmF+eKsChDKQQHTHAM9nKlh8x6qmbF4OO81/J/QFhU1BVVVVWfMQ2LB9AjTO+In+Kh3mmeF2OY75gauwoXEB3fNfg9nlLflPf5xuhrPCUD38uJ8YHl/MP6+no3IY4RkpkgvfDPzOZDd432tNm0p8ZusjMt8hx6oQRx6uQLYCdoWQQwrbWbIU+Rrq2tXYfCvcq1gf74R5opU3Qym9RQ8w+YYwYMzgbhFdMFI+c5QFpEIpG/mdZA7nWOcYSWs523QXU1qcExzcXfKfn0HKkXX027k/tSSJ4HSALayASGGyB1gCry2bwN7WSqUeuJDB4ohp92+dJ++VYMxfL7GwNIBhgeYYOa/pta42gmmWrjKV/R+m4GezbwQCfZc7/24fMWfddKxSjkJ1fUhZRkZQFn/hO66Zb+EMW+nTb3liUbw1K897L3Kx5mk6XUm7SCY9IfioKjYIaMJc347zzRk6wvGBnzRor9HMewwpLlsRTvc7LxgRkgM0uKgZGTohkyUbhVa+G/gDYbmWbA6mh38dq6byZ2sxDvg9ZKbwY2B/nz8Pp4WZV9SYCMY+rhZZ56P+vcERJMTd3XUAbaht7+1ztMVrYD+Ft0JY27AiSPZCEMiE9hXyN4wf3os+gPoX/L/1rLR7FR0GGxDUZHDT3B27OPoIuMzJs76JPf5Mt9yicvaTlhQMY7x7gS/l2IxDgfczxHjW4i8z83SfjI8vqYfAAAAABJRU5ErkJggg==" alt="">
+                        <span>0人已收藏</span>
+                    </div>
+                </div> 
+            </div>
+            <div class="clearfix f1">
+               <div class="product-detail">
+                 <div class="title">
+                     <img src="https://www.paipai.com/static/img/title.8dfb8a8.png" alt="" width="120px" hegiht="27px">
+                 </div>  
+                 <div class="con">
+                     <p>用了几次，闲置</p>
+                 </div>
+                 <div class="source">
+                   <div class="item">
+                       <span class="name">购买日期</span>
+                       <span class="info">2017-12-12</span>
+                       <class class="tip">距今大约1年6个月</class>
+                   </div>
+                   <div class="item">
+                       <span class="name">发布信息</span>
+                       <span class="info">纸质发票</span>
+                   </div>  
+                 </div>
+                 <div class="img-info">
+                    <div class="img">
+                        <img src="{{data.p_url}}" alt="">
+                    </div>
+                 </div>
+               </div> 
+            </div>
+        </div>
+{{/block}}
+{{block 'script'}}
+<script>
+
+let cover = document.querySelector('.cover')
+let big = document.querySelector('.big')
+let normal = document.querySelector('.normal')
+normal.addEventListener('mousemove',function(e){
+    e.preventDefault()
+    var x = e.clientX,
+        y = e.clientY,
+        cx = normal.getBoundingClientRect().left,
+        cy = normal.getBoundingClientRect().top,
+        tx = x-cx-75,
+        ty = y-cy-75;
+        if(tx<0){
+            tx=0
+        }
+        if(ty<0){
+            ty=0
+        }
+        if(ty>300){
+            ty=300
+        }
+        if(tx>300){
+            tx=300
+        }
+        var a = tx/450*100+"%",
+            b = ty/450*100+"%";
+            big.style.backgroundPosition=a+' '+b
+        cover.style.left = tx+'px'
+        cover.style.top = ty+'px'
+})
+normal.addEventListener('mousemove',function(){
+    big.style.display="block"
+    cover.style.display="block"
+})
+cover.addEventListener('mousemove',function(){
+    big.style.display="block"
+    cover.style.display="block"
+})
+normal.addEventListener('mouseout',function(){
+    big.style.display="none"
+    cover.style.display="none"
+})
+cover.addEventListener('mouseout',function(){
+    big.style.display="none"
+    cover.style.display="none"
+})
+</script>
+{{/block}}
